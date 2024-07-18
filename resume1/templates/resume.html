@@ -1,0 +1,56 @@
+{%load crispy_forms_tags %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Roboto', sans-serif;
+            padding: 20px;
+            position: relative;
+            min-height: 100vh;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+
+</head>
+<body>
+<form action="{% url 'login' %}">
+
+            <button type="submit" class="btn btn-primary footer">Logout</button>
+        </form>
+<form action="{% url 'resume-list' %}">
+
+            <button type="submit" class="btn btn-primary">Resume-List</button>
+        </form>
+<h1>Resume</h1>
+    <form method="post">
+    {% csrf_token %}
+    {{form|crispy}}
+    <input type="submit" value="Submit">
+</form>
+{% if messages %}
+{% for message in messages %}
+<script>
+    alert("{{message}}")
+</script>
+{% endfor %}
+{% endif %}
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

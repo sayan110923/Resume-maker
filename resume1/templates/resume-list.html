@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resume List</title>
+
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e6f7ff;
+            font-family: 'Roboto', sans-serif;
+            padding: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+
+
+    <button type="submit" class="btn waves-effect waves-light">Show Resume-List</button>
+
+
+</form>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>
